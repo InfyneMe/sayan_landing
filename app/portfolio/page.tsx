@@ -6,50 +6,130 @@ import { ArrowLeft } from "lucide-react"
 
 export default function PortfolioPage() {
   const categories = [
-    {
-      id: "skyscrapers",
-      name: "Skyscrapers",
-      projects: [
-        { id: 1, name: "Sayan Tower", location: "Mumbai", year: "2022" },
-        { id: 2, name: "Horizon Heights", location: "Delhi", year: "2021" },
-        { id: 3, name: "Sky Pinnacle", location: "Bangalore", year: "2020" },
-      ],
-    },
-    {
-      id: "airports",
-      name: "Airports",
-      projects: [
-        { id: 1, name: "Metro International Airport", location: "Chennai", year: "2023" },
-        { id: 2, name: "Regional Air Terminal", location: "Kolkata", year: "2021" },
-      ],
-    },
-    {
-      id: "complex",
-      name: "Complex",
-      projects: [
-        { id: 1, name: "Sayan Business Park", location: "Hyderabad", year: "2022" },
-        { id: 2, name: "Urban Square Mall", location: "Pune", year: "2021" },
-        { id: 3, name: "Tech Hub Complex", location: "Gurgaon", year: "2020" },
-      ],
-    },
-    {
-      id: "hospitals",
-      name: "Hospitals",
-      projects: [
-        { id: 1, name: "Sayan Medical Center", location: "Mumbai", year: "2023" },
-        { id: 2, name: "City General Hospital", location: "Delhi", year: "2022" },
-      ],
-    },
-    {
-      id: "colleges",
-      name: "Colleges",
-      projects: [
-        { id: 1, name: "Engineering Institute", location: "Bangalore", year: "2021" },
-        { id: 2, name: "Business School Campus", location: "Chennai", year: "2020" },
-        { id: 3, name: "Science & Technology Center", location: "Hyderabad", year: "2019" },
-      ],
-    },
-  ]
+      {
+        id: "skyscrapers",
+        name: "Skyscrapers",
+        projects: [
+          {
+            id: 1,
+            name: "Sayan Tower",
+            location: "Mumbai",
+            year: "2022",
+            image: "/images/sayan-tower.jpg" // Add the path to your image
+          },
+          {
+            id: 2,
+            name: "Horizon Heights",
+            location: "Delhi",
+            year: "2021",
+            image: "/images/horizon-heights.jpg" // Add the path to your image
+          },
+          {
+            id: 3,
+            name: "Sky Pinnacle",
+            location: "Bangalore",
+            year: "2020",
+            image: "/images/sky-pinnacle.jpg" // Add the path to your image
+          }
+        ]
+      },
+      {
+        id: "airports",
+        name: "Airports",
+        projects: [
+          {
+            id: 1,
+            name: "Metro International Airport",
+            location: "Chennai",
+            year: "2023",
+            image: "/images/metro-airport.jpg" // Add the path to your image
+          },
+          {
+            id: 2,
+            name: "Regional Air Terminal",
+            location: "Kolkata",
+            year: "2021",
+            image: "/images/regional-air-terminal.jpg" // Add the path to your image
+          }
+        ]
+      },
+      {
+        id: "complex",
+        name: "Complex",
+        projects: [
+          {
+            id: 1,
+            name: "Sayan Business Park",
+            location: "Hyderabad",
+            year: "2022",
+            image: "/images/sayan-business-park.jpg" // Add the path to your image
+          },
+          {
+            id: 2,
+            name: "Urban Square Mall",
+            location: "Pune",
+            year: "2021",
+            image: "/images/urban-square-mall.jpg" // Add the path to your image
+          },
+          {
+            id: 3,
+            name: "Tech Hub Complex",
+            location: "Gurgaon",
+            year: "2020",
+            image: "/images/tech-hub-complex.jpg" // Add the path to your image
+          }
+        ]
+      },
+      {
+        id: "hospitals",
+        name: "Hospitals",
+        projects: [
+          {
+            id: 1,
+            name: "Sayan Medical Center",
+            location: "Mumbai",
+            year: "2023",
+            image: "/images/sayan-medical-center.jpg" // Add the path to your image
+          },
+          {
+            id: 2,
+            name: "City General Hospital",
+            location: "Delhi",
+            year: "2022",
+            image: "/images/city-general-hospital.jpg" // Add the path to your image
+          }
+        ]
+      },
+      {
+        id: "colleges",
+        name: "Colleges",
+        projects: [
+          {
+            id: 1,
+            name: "Engineering Institute",
+            location: "Bangalore",
+            year: "2021",
+            image: "/images/engineering-institute.jpg" // Add the path to your image
+          },
+          {
+            id: 2,
+            name: "Business School Campus",
+            location: "Chennai",
+            year: "2020",
+            image: "/images/business-school-campus.jpg" // Add the path to your image
+          },
+          {
+            id: 3,
+            name: "Science & Technology Center",
+            location: "Hyderabad",
+            year: "2019",
+            image: "/images/science-technology-center.jpg" // Add the path to your image
+          }
+        ]
+      }
+    ];
+
+
 
   return (
     <main className="container mx-auto px-4 py-12">
@@ -80,9 +160,10 @@ export default function PortfolioPage() {
                 <div key={project.id} className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative h-48 w-full">
                     <Image
-                      src={`/placeholder.svg?height=300&width=500&text=${category.name}+${project.id}`}
+                      src={project.image}
                       alt={project.name}
-                      fill
+                      layout="fill"
+                      objectFit="cover"
                       className="object-cover"
                     />
                   </div>
@@ -96,6 +177,7 @@ export default function PortfolioPage() {
                 </div>
               ))}
             </div>
+
           </TabsContent>
         ))}
       </Tabs>

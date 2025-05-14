@@ -15,7 +15,7 @@ export default function Home() {
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-4xl font-bold mb-2 tracking-wider uppercase">
-              Welcome
+              Welcome To
             </h2>
             <h1 className="mb-6 text-4xl font-bold tracking-wider sm:text-5xl md:text-6xl">
               SAYAN CONSTRUCTION
