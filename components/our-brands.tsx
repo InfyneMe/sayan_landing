@@ -1,0 +1,64 @@
+import Image from "next/image"
+
+export default function OurBrands() {
+  const brands = [
+    {
+      id: 1,
+      name: "Sayan Homes",
+      logo: "/placeholder.svg?height=200&width=200&text=Sayan+Homes",
+      description: "Residential construction and development",
+    },
+    {
+      id: 2,
+      name: "Sayan Commercial",
+      logo: "/placeholder.svg?height=200&width=200&text=Sayan+Commercial",
+      description: "Office and retail space construction",
+    },
+    {
+      id: 3,
+      name: "Sayan Infrastructure",
+      logo: "/placeholder.svg?height=200&width=200&text=Sayan+Infrastructure",
+      description: "Roads, bridges and public infrastructure",
+    },
+    {
+      id: 4,
+      name: "Sayan Interiors",
+      logo: "/placeholder.svg?height=200&width=200&text=Sayan+Interiors",
+      description: "Interior design and furnishing",
+    },
+  ]
+
+  return (
+    <section className="bg-gray-900 py-16 text-white">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Our Other Brands</h2>
+          <p className="mx-auto max-w-2xl text-gray-300">
+            The Sayan Group encompasses specialized divisions to serve diverse construction needs
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {brands.map((brand) => (
+            <div
+              key={brand.id}
+              className="flex flex-col items-center rounded-lg bg-gray-800 p-6 text-center transition-transform hover:scale-105"
+            >
+              <div className="mb-4 h-24 w-24 overflow-hidden rounded-full bg-white">
+                <Image
+                  src={brand.logo || "/placeholder.svg"}
+                  alt={brand.name}
+                  width={96}
+                  height={96}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">{brand.name}</h3>
+              <p className="text-gray-400">{brand.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
