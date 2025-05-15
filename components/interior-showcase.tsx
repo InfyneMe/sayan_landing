@@ -8,25 +8,25 @@ export default function InteriorShowcase() {
       id: 1,
       title: "Modern Minimalist",
       description: "Clean lines and open spaces define this contemporary design",
-      image: "/placeholder.svg?height=600&width=800&text=Interior+Design+1",
+      image: "/interior1.jpg?height=600&width=800&text=Interior+Design+1",
     },
     {
       id: 2,
       title: "Luxury Residence",
       description: "Elegant interiors with premium materials and finishes",
-      image: "/placeholder.svg?height=600&width=800&text=Interior+Design+2",
+      image: "/interior2.jpg?height=600&width=800&text=Interior+Design+2",
     },
     {
       id: 3,
       title: "Urban Apartment",
       description: "Smart space utilization with stylish urban aesthetics",
-      image: "/placeholder.svg?height=600&width=800&text=Interior+Design+3",
+      image: "/interior3.jpg?height=600&width=800&text=Interior+Design+3",
     },
     {
       id: 4,
       title: "Corporate Office",
       description: "Productive and inspiring workplace environments",
-      image: "/placeholder.svg?height=600&width=800&text=Interior+Design+4",
+      image: "/interiorOffice.jpg?height=600&width=800&text=Interior+Design+4",
     },
   ]
 

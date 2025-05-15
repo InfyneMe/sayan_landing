@@ -4,9 +4,9 @@ export default function OurBrands() {
   const brands = [
     {
       id: 1,
-      name: "Sayan Homes",
+      name: "Loadzo",
       logo: "/placeholder.svg?height=200&width=200&text=Sayan+Homes",
-      description: "Residential construction and development",
+      description: "Bricks. Roads. On the Go.",
     },
     {
       id: 2,
@@ -22,9 +22,9 @@ export default function OurBrands() {
     },
     {
       id: 4,
-      name: "Sayan Interiors",
+      name: "Hoomi",
       logo: "/placeholder.svg?height=200&width=200&text=Sayan+Interiors",
-      description: "Interior design and furnishing",
+      description: "Style Your Space, Love Your Place.",
     },
   ]
 
