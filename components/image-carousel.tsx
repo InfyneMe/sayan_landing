@@ -17,7 +17,7 @@ const images = [
     alt: "Skyscraper project in progress",
   },
   {
-    src: "/airport2.jpg?height=1080&width=1920&text=Interior+Design",
+    src: "/cargo.jpg?height=1080&width=1920&text=Interior+Design",
     alt: "Interior design project by Sayan Construction",
   },
 ]
@@ -47,7 +47,7 @@ export default function ImageCarousel() {
             alt={image.alt}
             fill
             priority={index === 0}
-            className="object-cover filter blur-[0.3px] scale-99 transition-transform duration-1000"
+            className="object-cover filter blur-[0.3px] transition-transform duration-1000"
           />
         </div>
       ))}
