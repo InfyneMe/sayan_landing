@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function OurBrands() {
   const brands = [
@@ -7,6 +8,7 @@ export default function OurBrands() {
       name: "Loadzo",
       logo: "/placeholder.svg?height=200&width=200&text=Sayan+Homes",
       description: "Bricks. Roads. On the Go.",
+      url: "https://sayan-store-i7ec.vercel.app/",
     },
     {
       id: 2,
@@ -39,24 +41,35 @@ export default function OurBrands() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {brands.map((brand) => (
-            <div
-              key={brand.id}
-              className="flex flex-col items-center rounded-lg bg-gray-800 p-6 text-center transition-transform hover:scale-105"
-            >
-              <div className="mb-4 h-24 w-24 overflow-hidden rounded-full bg-white">
-                <Image
-                  src={brand.logo || "/placeholder.svg"}
-                  alt={brand.name}
-                  width={96}
-                  height={96}
-                  className="h-full w-full object-contain"
-                />
+          {brands.map((brand) => {
+            // If brand has a url, wrap in Link, otherwise just div
+            const content = (
+              <div
+                key={brand.id}
+                className="flex flex-col items-center rounded-lg bg-gray-800 p-6 text-center transition-transform hover:scale-105 cursor-pointer"
+              >
+                <div className="mb-4 h-24 w-24 overflow-hidden rounded-full bg-white">
+                  <Image
+                    src={brand.logo || "/placeholder.svg"}
+                    alt={brand.name}
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <h3 className="mb-2 text-xl font-semibold">{brand.name}</h3>
+                <p className="text-gray-400">{brand.description}</p>
               </div>
-              <h3 className="mb-2 text-xl font-semibold">{brand.name}</h3>
-              <p className="text-gray-400">{brand.description}</p>
-            </div>
-          ))}
+            )
+
+            return brand.url ? (
+              <Link key={brand.id} href={brand.url} target="_blank" rel="noopener noreferrer">
+                {content}
+              </Link>
+            ) : (
+              <div key={brand.id}>{content}</div>
+            )
+          })}
         </div>
       </div>
     </section>
